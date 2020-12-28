@@ -19,11 +19,36 @@
     
 </style>
 <body>
-    <!-- <nav class="absolute mx-auto w-full z-0">
-        <div class="mr-auto px-4 py-4">
-            <a href="./index.html"><button class="border focus:outline-none border-2 bg-blue-500 px-4 py-2 shadow-lg rounded-full"><i class="fa fa-2x text-white fa-chevron-left"></i></button></a>
+    <div class="w-full lg:hidden z-40 p-8 absolute" x-data="{ active: false }">
+        <div class="hamburger text-white bg-blue-500 rounded-lg float-right is-active mx-auto w-max" :class="{ 'hamburger--3dx': active == true}" @click="active = ! active">
+            <div class="hamburger-box" >
+                <div class="hamburger-inner"></div>
+            </div>
         </div>
-    </nav> -->
+    </div>
+
+    <nav class="absolute bg-white shadow-lg mx-auto w-full z-30 nav-collapsed">
+        <div class="mr-auto absolute">
+            <img src="./img/logo.png" alt="logo" class="w-24">
+        </div>
+        <div class="lg:bg-white bg-gray-50 lg:ml-auto lg:w-max lg:pt-4 pt-32 p-6">
+            <ul class="lg:flex  text-sm lg:text-black items-center font-semibold">
+                <a href="./dashboard.html"><li class="lg:px-8 py-2">Dashboard</li></a>
+                <a href="./logbook.html"><li class="lg:px-8 py-2">Logbook</li></a>
+                <a href="./insights.html"><li class="lg:px-8 py-2">Insights</li></a>
+                <a href="./rangar.html"><li class="lg:px-8 py-2">Rangar</li></a>
+                <a href="./navigation.html"><li class="lg:px-8 py-2">Navigation</li></a>
+                <a href="./settings.html"><li class="lg:px-8 py-2">Settings</li></a>
+                <a href="./logout.html"><li class="lg:px-8 py-2">Logout</li></a>
+            </ul>
+        </div>
+    </nav>
+    <script>
+        $('.hamburger').on('click', function(){
+            $('nav').toggleClass('nav-collapsed');
+        })
+    </script>
+
     <div class="min-h-screen bg-gray-50 divide-y-2">
         <div class="mx-auto w-8/12 lg:p-10 text-center lg:flex justify-around gap-16">
             <label for="file-upload" class="px-4 py-2 border flex-none relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
