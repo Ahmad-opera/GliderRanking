@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rules</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js" integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA==" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/tailwind.min.css">
+    <link rel="stylesheet" href="./css/hamburgers.min.css">
+</head>
+<style>
+    body{
+        font-family: 'Quicksand';
+    }
+    
+</style>
+<body>
+    <div class="w-full lg:hidden z-40 p-8 absolute" x-data="{ active: false }">
+        <div class="hamburger text-white bg-blue-500 rounded-lg float-right is-active mx-auto w-max" :class="{ 'hamburger--3dx': active == true}" @click="active = ! active">
+            <div class="hamburger-box" >
+                <div class="hamburger-inner"></div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="absolute bg-white shadow-lg mx-auto w-full z-30 nav-collapsed">
+        <div class="mr-auto absolute">
+            <img src="./img/logo.png" alt="logo" class="w-24">
+        </div>
+        <div class="lg:bg-white bg-gray-50 lg:ml-auto lg:w-max lg:pt-4 pt-32 p-6">
+            <ul class="lg:flex  text-sm lg:text-black items-center font-semibold">
+                <a href=""><li class="lg:px-8 py-2">Dashboard</li></a>
+                <a href="./logbook.html"><li class="lg:px-8 py-2">Logbook</li></a>
+                <a href="./insights.html"><li class="lg:px-8 py-2">Insights</li></a>
+                <a href="./rangar.html"><li class="lg:px-8 py-2">Rangar</li></a>
+                <a href="./navigation.html"><li class="lg:px-8 py-2">Navigation</li></a>
+                <a href="./settings.html"><li class="lg:px-8 py-2">Settings</li></a>
+                <a href="./logout.html"><li class="lg:px-8 py-2">Logout</li></a>
+            </ul>
+        </div>
+    </nav>
+    <script>
+        $('.hamburger').on('click', function(){
+            $('nav').toggleClass('nav-collapsed');
+        })
+    </script>
+
+    <div class="min-h-screen bg-gray-50 divide-y-2 pt-32">
+        <div class="mx-auto w-8/12 lg:p-10 text-center lg:flex justify-around gap-16">
+            <label for="file-upload" class="px-4 py-2 border flex-none relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                <span>Upload a file</span>
+                <input id="file-upload" name="file-upload" type="file" class="sr-only">
+            </label>
+            <div class="lg:flex w-full hidden justify-around flex-none">
+                <div class="">
+                    <h1>Landings</h1>
+                    <h1 class="font-semibold">0</h1>
+                </div>
+                <div class="">
+                    <h1>Time</h1>
+                    <h1 class="font-semibold">0:0:0</h1>
+                </div>
+                <div class="">
+                    <h1>Distance XC</h1>
+                    <h1 class="font-semibold">0</h1>
+                </div>
+                <div class="">
+                    <h1>Tows</h1>
+                    <h1 class="font-semibold">0</h1>
+                </div>
+                <div class="">
+                    <h1>Winch</h1>
+                    <h1 class="font-semibold">0</h1>
+                </div>
+                <div class="">
+                    <h1>Selflaunch</h1>
+                    <h1 class="font-semibold">0</h1>
+                </div>
+            </div>
+        </div>
+        <div class="lg:px-32 lg:pt-10 px-6 py-6">
+            <h1 class="font-semibold text-lg">Welcome to your Gliding dashboard</h1>
+            <p class="lg:w-4/12 text-sm">You have not yet saved any flights in your logbook.
+                Add flights by uploading IGC files or by manual input</p>
+        </div>
+
+        <div class="px-8 py-6 bg-white shadow-lg mx-4 lg:w-4/12 mx-auto">
+            <h1 class="font-semibold text-lg">Flight of 2020-12-27</h1>
+            <!-- <div class="flex py-4">
+                <div class="w-14 h-14 rounded-full border-2 bg-gray-100"></div>
+                <button class="ml-6 px-4 py-1 bg-gray-50 border rounded-full">Reload</button> 
+            </div>-->
+            <div class="py-8 flex justify-around text-center">
+                <div class="">
+                    <h1 class="text-sm">Distance</h1>
+                    <h1 class="font-semibold">937KM</h1>
+                </div>
+                <div class="">
+                    <h1 class="text-sm">Duration</h1>
+                    <h1 class="font-semibold">11:37:56</h1>
+                </div>
+                <div class="">
+                    <h1 class="text-sm">Avg. climb</h1>
+                    <h1 class="font-semibold">1.79 m/s</h1>
+                </div>
+            </div>
+            <div class="overflow-hidden">
+                <img src="./img/map.jpg" alt="map">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
