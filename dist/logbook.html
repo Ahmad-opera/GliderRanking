@@ -56,62 +56,27 @@
                 <input id="file-upload" name="file-upload" type="file" class="sr-only">
             </label>
             <div class="lg:flex w-full hidden justify-around flex-none">
-                <div class="">
-                    <h1>Landings</h1>
-                    <h1 class="font-semibold">0</h1>
-                </div>
-                <div class="">
-                    <h1>Time</h1>
-                    <h1 class="font-semibold">0:0:0</h1>
-                </div>
-                <div class="">
-                    <h1>Distance XC</h1>
-                    <h1 class="font-semibold">0</h1>
-                </div>
-                <div class="">
-                    <h1>Tows</h1>
-                    <h1 class="font-semibold">0</h1>
-                </div>
-                <div class="">
-                    <h1>Winch</h1>
-                    <h1 class="font-semibold">0</h1>
-                </div>
-                <div class="">
-                    <h1>Selflaunch</h1>
-                    <h1 class="font-semibold">0</h1>
-                </div>
+                
             </div>
         </div>
         <div class="lg:px-32 lg:pt-10 px-6 py-6">
-            <h1 class="font-semibold text-lg">Welcome to your Gliding dashboard</h1>
-            <p class="lg:w-4/12 text-sm">You have not yet saved any flights in your logbook.
-                Add flights by uploading IGC files or by manual input</p>
+            <table class="table-border text-sm font-thin">
+                <tr>
+                    <th class="px-4 py-1">Date</th>
+                    <th class="px-4 py-1">Callsign</th>
+                    <th class="px-4 py-1">Type</th>
+                    <th class="px-4 py-1">Launch</th>
+                    <th class="px-4 py-1">Takeoff</th>
+                    <th class="px-4 py-1">T.Time</th>
+                    <th class="px-4 py-1">Landing</th>
+                    <th class="px-4 py-1">L.Time</th>
+                    <th class="px-4 py-1">Duration</th>
+                    <th class="px-4 py-1">Dist</th>
+                </tr>
+            </table>
         </div>
 
-        <div class="px-8 py-6 bg-white shadow-lg mx-4 lg:w-4/12 mx-auto">
-            <h1 class="font-semibold text-lg">Flight of 2020-12-27</h1>
-            <!-- <div class="flex py-4">
-                <div class="w-14 h-14 rounded-full border-2 bg-gray-100"></div>
-                <button class="ml-6 px-4 py-1 bg-gray-50 border rounded-full">Reload</button> 
-            </div>-->
-            <div class="py-8 flex justify-around text-center">
-                <div class="">
-                    <h1 class="text-sm">Distance</h1>
-                    <h1 class="font-semibold">937KM</h1>
-                </div>
-                <div class="">
-                    <h1 class="text-sm">Duration</h1>
-                    <h1 class="font-semibold">11:37:56</h1>
-                </div>
-                <div class="">
-                    <h1 class="text-sm">Avg. climb</h1>
-                    <h1 class="font-semibold">1.79 m/s</h1>
-                </div>
-            </div>
-            <div class="overflow-hidden">
-                <img src="./img/map.jpg" alt="map">
-            </div>
-        </div>
+        
     </div>
 
 </body>
