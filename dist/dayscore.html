@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js" integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA==" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/tailwind.min.css">
+    <link rel="stylesheet" href="./css/hamburgers.min.css">
+</head>
+<style>
+    body{
+        font-family: 'Quicksand';
+    }
+    @media screen and (max-width: 767px){
+        nav{
+            transition: .4s ease;
+        }
+        .nav-collapsed{
+            margin-top: -110%;
+            transition: .4s ease;
+        }
+    }
+</style>
+<body>
+    <div class="w-full lg:hidden z-40 p-8 absolute" x-data="{ active: false }">
+        <div class="hamburger text-white bg-blue-500 rounded-lg float-right is-active mx-auto w-max" :class="{ 'hamburger--3dx': active == true}" @click="active = ! active">
+            <div class="hamburger-box" >
+                <div class="hamburger-inner"></div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="absolute bg-white shadow-lg mx-auto w-full z-30 nav-collapsed">
+        <div class="mr-auto absolute">
+            <img src="./img/logo.png" alt="logo" class="w-24">
+        </div>
+        <div class="lg:bg-white bg-gray-50 lg:ml-auto lg:w-max lg:pt-4 pt-32 p-6">
+            <ul class="lg:flex  text-sm lg:text-black items-center font-semibold">
+                <a href="./dashboard.html"><li class="lg:px-8 py-2">Dashboard</li></a>
+                <a href="./logbook.html"><li class="lg:px-8 py-2">Logbook</li></a>
+                <a href="./insights.html"><li class="lg:px-8 py-2">Insights</li></a>
+                <a href="./rangar.html"><li class="lg:px-8 py-2">Rangar</li></a>
+                <a href="./navigation.html"><li class="lg:px-8 py-2">Navigation</li></a>
+                <a href="./settings.html"><li class="lg:px-8 py-2">Settings</li></a>
+                <a href="./logout.html"><li class="lg:px-8 py-2">Logout</li></a>
+            </ul>
+        </div>
+    </nav>
+    <script>
+        $('.hamburger').on('click', function(){
+            $('nav').toggleClass('nav-collapsed');
+        })
+    </script>
+
+<main>
+    <div class="lg:flex lg:divide-x-2 divide-gray-100 pb-10 w-full justify-center pt-28">
+        <article class=" mx-auto text-sm w-full lg:w-max text-center mt-8">
+            <h1 class="font-semibold text-gray-400 text-left mb-6 pl-6">Daily Flights</h1>
+           <table class="bg-white lg:h-max p-16 py-16 mx-auto md:text-normal shadow-inner rounded-xl text-xs divide-y-2 divide-gray-100 flex-none">
+               <thead class="pt-5">
+                   <th class="px-4 lg:px-6 py-4">Rank</th>
+                   <th class="px-8 py-4">Name</th>
+                   <th class="px-8 py-4 lg:block hidden">Club</th>
+                   <th class="px-8 py-4">Region</th>
+                   <th class="px-8 py-4 lg:block hidden">Points</th>
+               </thead>
+               <tr class="py-5 bg-yellow-50">
+                   <td class="px-4 py-3">Silver</td>
+                   <td class="px-4 py-3 text-left">Rafi Luski (IL)</td>
+                   <td class="px-4 py-3 lg:block hidden">Veronica (NA / 0)</td>
+                   <td class="px-4 py-3">America</td>
+                   <td class="px-4 py-3 lg:block hidden">1143.13pt</td>
+               </tr>
+               <tr>
+                   <td class="px-4 py-3">Gold</td>
+                   <td class="px-4 py-3 text-left">Radek Krejcirik (CZ / CZ)</td>
+                   <td class="px-4 py-3 lg:block hidden">Veronica (NA / 0)</td>
+                   <td class="px-4 py-3">America</td>
+                   <td class="px-4 py-3 lg:block hidden">1143.13pt</td>
+                </tr>
+                <tr class="py-5 bg-yellow-50">
+                    <td class="px-4 py-3">Aviator</td>
+                    <td class="px-4 py-3 text-left">Rafi Luski (IL)</td>
+                    <td class="px-4 py-3 lg:block hidden">Veronica (NA / 0)</td>
+                    <td class="px-4 py-3">America</td>
+                    <td class="px-4 py-3 lg:block hidden">1143.13pt</td>
+                </tr>
+                <tr class="py-5">
+                    <td class="px-4 py-3">Silver</td>
+                    <td class="px-4 py-3 text-left">Rafi Luski (IL)</td>
+                    <td class="px-4 py-3 lg:block hidden">Veronica (NA / 0)</td>
+                    <td class="px-4 py-3">America</td>
+                    <td class="px-4 py-3 lg:block hidden">1143.13pt</td>
+                </tr>
+                <tr class="py-5 bg-yellow-50">
+                    <td class="px-4 py-3">Silver</td>
+                    <td class="px-4 py-3 text-left">Rafi Luski (IL)</td>
+                    <td class="px-4 py-3 lg:block hidden">Veronica (NA / 0)</td>
+                    <td class="px-4 py-3">America</td>
+                    <td class="px-4 py-3 lg:block hidden">1143.13pt</td>
+                </tr>
+                <tr class="py-5 ">
+                    <td class="px-4 py-3">Silver</td>
+                    <td class="px-4 py-3 text-left">Rafi Luski (IL)</td>
+                    <td class="px-4 py-3 lg:block hidden">Veronica (NA / 0)</td>
+                    <td class="px-4 py-3">America</td>
+                    <td class="px-4 py-3 lg:block hidden">1143.13pt</td>
+                </tr>
+                <tr class="py-5 bg-yellow-50">
+                    <td class="px-4 py-3">Silver</td>
+                    <td class="px-4 py-3 text-left">Rafi Luski (IL)</td>
+                    <td class="px-4 py-3 lg:block hidden">Veronica (NA / 0)</td>
+                    <td class="px-4 py-3">America</td>
+                    <td class="px-4 py-3 lg:block hidden">1143.13pt</td>
+                </tr>
+                <tr class="py-5 ">
+                    <td class="px-4 py-3">Silver</td>
+                    <td class="px-4 py-3 text-left">Rafi Luski (IL)</td>
+                    <td class="px-4 py-3 lg:block hidden">Veronica (NA / 0)</td>
+                    <td class="px-4 py-3">America</td>
+                    <td class="px-4 py-3 lg:block hidden">1143.13pt</td>
+                </tr>
+                <tr class="py-5 bg-yellow-50">
+                    <td class="px-4 py-3">Silver</td>
+                    <td class="px-4 py-3 text-left">Rafi Luski (IL)</td>
+                    <td class="px-4 py-3 lg:block hidden">Veronica (NA / 0)</td>
+                    <td class="px-4 py-3">America</td>
+                    <td class="px-4 py-3 lg:block hidden">1143.13pt</td>
+                </tr>
+                <tr class="py-5">
+                    <td class="px-4 py-3">Silver</td>
+                    <td class="px-4 py-3 text-left">Rafi Luski (IL)</td>
+                    <td class="px-4 py-3 lg:block hidden">Veronica (NA / 0)</td>
+                    <td class="px-4 py-3">America</td>
+                    <td class="px-4 py-3 lg:block hidden">1143.13pt</td>
+                </tr>
+            </table>
+           
+        </article>
+
+        </div>
+    </div>
+   </main>
+
+   
+
+</body>
+</html>
