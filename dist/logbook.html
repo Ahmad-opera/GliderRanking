@@ -57,8 +57,8 @@
         })
     </script>
 
-    <div class="min-h-screen bg-gray-50 divide-y-2 pt-32">
-        <div class="mx-auto w-8/12 lg:p-10 my-2">
+    <div class="min-h-screen bg-gray-50 divide-y-2 pt-28">
+        <div class=" w-8/12 lg:p-4 my-3 mx-4">
             <label for="file-upload" class="px-4 py-2 border flex-none relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
                 <span>Add Flight</span>
                 <input id="file-upload" name="file-upload" type="file" class="sr-only">
@@ -66,30 +66,31 @@
 
         </div>
         <div class="lg:px-32 lg:pt-10 px-2 py-6">
-            <table class="table-border text-sm font-thin divide-y-2 divide-gray-200">
+            <h1 class="lg:text-sm text-xs py-3">Time: 07:32:58 / Takeoff's: 1 (Tow 1 / Winch 0 / Selflaunch 0) / Distance: 562km</h1>
+            <table class="table-border justify-center text-center text-sm font-thin divide-y-2 divide-gray-200">
                 <tr class="border-b boder-gray-50">
-                    <th class="lg:px-4 px-2 py-1">Date</th>
-                    <th class="lg:px-4 px-2 py-1 hidden lg:block">Callsign</th>
-                    <th class="lg:px-4 px-2 py-1">Type</th>
-                    <th class="lg:px-4 px-2 py-1 hidden lg:block">Launch</th>
-                    <th class="lg:px-4 px-2 py-1 hidden lg:block">Takeoff</th>
-                    <th class="lg:px-4 px-2 py-1 hidden lg:block">T.Time</th>
-                    <th class="lg:px-4 px-2 py-1 hidden lg:block">Landing</th>
-                    <th class="lg:px-4 px-2 py-1 hidden lg:block">L.Time</th>
-                    <th class="lg:px-4 px-2 py-1">Duration</th>
-                    <th class="lg:px-4 px-2 py-1">Dist</th>
+                    <th class="lg:px-4 px-4 py-1">Date</th>
+                    <th class="lg:px-4 px-4 py-1 hidden lg:table-cell">Callsign</th>
+                    <th class="lg:px-4 px-4 py-1">Type</th>
+                    <th class="lg:px-4 px-4 py-1 hidden lg:table-cell">Launch</th>
+                    <th class="lg:px-4 px-4 py-1 hidden lg:table-cell">Takeoff</th>
+                    <th class="lg:px-4 px-4 py-1 hidden lg:table-cell">T.Time</th>
+                    <th class="lg:px-4 px-4 py-1 hidden lg:table-cell">Landing</th>
+                    <th class="lg:px-4 px-4 py-1 hidden lg:table-cell">L.Time</th>
+                    <th class="lg:px-4 px-4 py-1">Duration</th>
+                    <th class="lg:px-4 px-4 py-1">Dist</th>
                 </tr>
                 <tr>
-                    <td class="lg:px-4 px-2 py-2 bg-gray-200">2020-04-23</td>
-                    <td class="lg:px-4 px-2 py-2 hidden lg:block">D-KUBA</td>
-                    <td class="lg:px-4 px-2 py-2">ASG 29Es</td>
-                    <td class="lg:px-4 px-2 py-2 hidden lg:block">Tow</td>
-                    <td class="lg:px-4 px-2 py-2 hidden lg:block">EHTL</td>
-                    <td class="lg:px-4 px-2 py-2 hidden lg:block">17:21:11</td>
-                    <td class="lg:px-4 px-2 py-2 hidden lg:block">9:21:11</td>
-                    <td class="lg:px-4 px-2 py-2 hidden lg:block">EHTL</td>
-                    <td class="lg:px-4 px-2 py-2">07:32:53</td>
-                    <td class="lg:px-4 px-2 py-2">562km</td>
+                    <td class="lg:px-4 px-4 py-2 bg-gray-200">2020-04-23</td>
+                    <td class="lg:px-4 px-4 py-2 hidden lg:table-cell">D-KUBA</td>
+                    <td class="lg:px-4 px-4 py-2">ASG 29Es</td>
+                    <td class="lg:px-4 px-4 py-2 hidden lg:table-cell">Tow</td>
+                    <td class="lg:px-4 px-4 py-2 hidden lg:table-cell">EHTL</td>
+                    <td class="lg:px-4 px-4 py-2 hidden lg:table-cell">17:21:11</td>
+                    <td class="lg:px-4 px-4 py-2 hidden lg:table-cell">9:21:11</td>
+                    <td class="lg:px-4 px-4 py-2 hidden lg:table-cell">EHTL</td>
+                    <td class="lg:px-4 px-4 py-2">07:32:53</td>
+                    <td class="lg:px-4 px-4 py-2">562km</td>
                 </tr>
             </table>
         </div>
