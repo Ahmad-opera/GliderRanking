@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js" integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA==" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/tailwind.min.css">
     <link rel="stylesheet" href="./css/hamburgers.min.css">
+    <script type="module" src="./js/alpine.min.js"></script>
+    <script nomodule src="./js/alpine-ie11.min.js" defer></script>
 </head>
 <style>
     body{
@@ -61,6 +62,42 @@
     <div class="lg:flex lg:divide-x-2 divide-gray-100 pb-10 w-full justify-center pt-28">
         <article class=" mx-auto text-sm w-full lg:w-max text-center mt-8">
             <h1 class="font-semibold text-gray-400 text-left mb-6 pl-6">Global Records</h1>
+            <div class="w-full justify-left flex">
+                <div class="relative inline-block text-left pb-10" x-data="{ open: false }">
+                    <div>
+                        <button type="button" @click="open = true" class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" id="options-menu" aria-haspopup="true" aria-expanded="true">
+                            Region
+                            <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        </div>
+        
+                        <div  x-show="open" @click.away="open = false" x-transition:enter="transition ease-out duration-100"
+                        x-transition:start="transform opacity-0 scale-95" x-transition:end="transform opacity-100 scale-100"
+                        
+                        class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100" 
+                        role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                        
+                        <div class="py-1"  role="button">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Italy</a>
+                        </div>
+                        
+                        <div class="py-1"  role="button">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Switzerland</a>
+                        </div>
+        
+                        <div class="py-1 sm-only"  role="button">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">USA</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-6">
+                    <input type="date" class="px-4 py-2 rounded border border-gray-300">
+                </div>
+            </div>
+
            <table class="bg-white lg:h-max p-16 py-16 mx-auto md:text-normal shadow-inner rounded-xl text-xs divide-y-2 divide-gray-100 flex-none">
                <thead class="pt-5">
                    <th class="px-4 lg:px-6 py-4">Rank</th>
